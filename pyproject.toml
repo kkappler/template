@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "st"
+version = "0.0.0"
+dependencies = [
+    "ipympl",
+    "ipywidgets",
+    "loguru",
+    "matplotlib",
+    "mtpy-v2",
+    "numpy<2",
+    "scipy",
+    "pyserial",  # installs as serial
+    "pandas",
+    "xarray",
+]
+requires-python = ">=3.9"
+
+#[tool.setuptools.dynamic]
+#dependencies = { file = ["requirements.txt"] }
+
+authors = [
+  {name = "Karl Kappler", email = "magnetotellurics@gmail.com"},
+]
+
+description = "Tools for working with template data"
+keywords = ["template", ]
+readme = "README.md"
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Programming Language :: Python",
+]
+
+
+[project.urls]
+Repository = "https://github.com/kkappler/template.git"
+"Bug Tracker" = "https://github.com/kkappler/template/issues"
+
+[tool.pytest.ini_options]
+# pythonpath = "src"
+pythonpath = "."
+addopts = [
+    "--import-mode=importlib",
+]
