@@ -1,0 +1,17 @@
+name: template
+channels:
+  - anaconda
+  - conda-forge
+  - defaults
+dependencies:
+#  - scipy==1.9.1
+  - pip==24.2
+  - python==3.9
+  - pip:
+#    - aurora
+#    - ipykernel
+    - jupyterlab
+    - numpy<2.0
+    - pandas==2.2.2
+    - scipy
+#    - torchvision 
