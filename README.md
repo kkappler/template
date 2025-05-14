@@ -15,3 +15,5 @@ Because the environment will be in flux for sometime, we may need to periodicall
 (optionally include --prune to remove anything not in the yaml)
 > conda env update --name template --file environment.yaml --prune
 
+# Add developer stuffs
+> pip install -r requirements-dev.txt
