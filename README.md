@@ -17,3 +17,8 @@ Because the environment will be in flux for sometime, we may need to periodicall
 
 # Add developer stuffs
 > pip install -r requirements-dev.txt
+
+# Install the package 
+> pip install -e .
+
+
