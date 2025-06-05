@@ -27,7 +27,7 @@ jobs:
     - name: Setup Miniconda
       uses: conda-incubator/setup-miniconda@v2.1.1
       with:
-        activate-environment: dipole-test
+        activate-environment: template-test
         python-version: ${{ matrix.python-version }}
 
     - name: Install Env
