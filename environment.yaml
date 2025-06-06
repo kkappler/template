@@ -1,4 +1,4 @@
-name: template
+name: hp3562a
 channels:
   - anaconda
   - conda-forge
