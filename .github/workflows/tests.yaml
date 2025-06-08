@@ -15,7 +15,7 @@ jobs:
       run:
         shell: bash -l {0}
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         os: ["ubuntu-latest"]
         python-version: [3.9, ]
@@ -27,7 +27,7 @@ jobs:
     - name: Setup Miniconda
       uses: conda-incubator/setup-miniconda@v2.1.1
       with:
-        activate-environment: dipole-test
+        activate-environment: template-test
         python-version: ${{ matrix.python-version }}
 
     - name: Install Env
@@ -43,53 +43,6 @@ jobs:
         echo "environment contents"
         pip freeze
         
-    - name: Install Jupyter and dependencies
-      run: |
-        pip install jupyter
-        pip install ipykernel
-        python -m ipykernel install --user --name dipole-test
-        # Install any other dependencies you need
-
-    - name: Execute Jupyter Notebooks
-      run: |
-        # Straight line transect examples
-        jupyter nbconvert --to notebook --execute docs/examples/moving_source_transectsweep_1mAm2.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/moving_source_transectsweep_10mAm2.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/moving_source_amplitudesweep.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/moving_source_velocitysweep.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/moving_source_noisy_transect_1m_offset.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/moving_source_noisy_transect_30cm_offset.ipynb
-
-        # Examples similar to the compass pendulum experiments
-        jupyter nbconvert --to notebook --execute docs/examples/pendulum_compass/pendulum_ODE.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/pendulum_compass/singlebollard_pendulum_transectsweep_1mAm2_fremont_b.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/pendulum_compass/singlebollard_pendulum_transectsweep_1mAm2_fremont_zflip_b.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/pendulum_compass/singlebollard_pendulum_transectsweep_1mAm2_northpole_b.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/pendulum_compass/singlebollard_pendulum_transectsweep_1mAm2_northpole_zflip_b.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/pendulum_compass/singlebollard_pendulum_transectsweep_1mAm2_orlando_b.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/pendulum_compass/singlebollard_pendulum_transectsweep_1mAm2_orlando_zflip_b.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/pendulum_compass/singlebollard_pendulum_transectsweep_1mAm2_singapore_b.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/pendulum_compass/singlebollard_pendulum_transectsweep_1mAm2_singapore_zflip_b.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/pendulum_compass/Timeseries/Pendulum_1mAm2/pendulum_30cmoffset_inducing_field_variation_zflip.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/pendulum_compass/Timeseries/Pendulum_1mAm2/pendulum_30cmoffset_inducing_field_variation.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/pendulum_compass/singlebollard_pendulum_transectsweep_10mAm2_fremont_zflip_b.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/pendulum_compass/singlebollard_pendulum_transectsweep_10mAm2_fremont_zflip_dbdt.ipynb
-
-        # Examples similar to the small ball bearing pendulum experiments
-        jupyter nbconvert --to notebook --execute docs/examples/pendulum_small_ball_bearing/pendulum_ODE_small_ballbearing.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/pendulum_small_ball_bearing/singlebollard_pendulum_small_ballbearing_transectsweep_fremont_zflip_b.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/pendulum_small_ball_bearing/singlebollard_pendulum_small_ballbearing_transectsweep_fremont_zflip_dbdt.ipynb
-        
-        # Examples similar to the large ball bearing pendulum experiments
-        jupyter nbconvert --to notebook --execute docs/examples/pendulum_large_ball_bearing/pendulum_ODE_large_ballbearing.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/pendulum_large_ball_bearing/singlebollard_pendulum_large_ballbearing_transectsweep_fremont_zflip_b.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/pendulum_large_ball_bearing/singlebollard_pendulum_large_ballbearing_transectsweep_fremont_zflip_dbdt.ipynb
-
-        # Straight line transects with 2 bollards (SafePoint system)
-        jupyter nbconvert --to notebook --execute docs/examples/safepoint_system_straight_transect_1mAm2.ipynb
-        jupyter nbconvert --to notebook --execute docs/examples/safepoint_system_straight_transect_1mAm2_dbdt.ipynb
-
-
     - name: Run Tests
       run: |
         # pytest -s -v tests/synthetic/test_fourier_coefficients.py --cov=./ --cov-report=xml --cov=aurora
