@@ -1,8 +1,9 @@
 black
 flake8
+ipython
 nbsphinx
 numpydoc
 pre-commit
+pytest
 sphinx_gallery
 sphinx_rtd_theme
-ipython
