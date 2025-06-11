@@ -3,7 +3,7 @@ requires = ["setuptools >= 61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "template"
+name = "hp3562a"
 version = "0.0.0"
 dependencies = [
     "ipympl",
@@ -26,8 +26,8 @@ authors = [
   {name = "Karl Kappler", email = "magnetotellurics@gmail.com"},
 ]
 
-description = "Tools for working with template data"
-keywords = ["template", ]
+description = "Tools for working with hp3562a data"
+keywords = ["hp3562a", ]
 readme = "README.md"
 classifiers = [
   "Development Status :: 2 - Pre-Alpha",
@@ -36,8 +36,8 @@ classifiers = [
 
 
 [project.urls]
-Repository = "https://github.com/kkappler/template.git"
-"Bug Tracker" = "https://github.com/kkappler/template/issues"
+Repository = "https://github.com/kkappler/hp3562a.git"
+"Bug Tracker" = "https://github.com/kkappler/hp3562a/issues"
 
 [tool.pytest.ini_options]
 # pythonpath = "src"
