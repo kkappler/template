@@ -6,7 +6,7 @@
 
 import unittest
 
-from template.util.helper_functions import execute_subprocess
+from hp3562a.util.helper_functions import execute_subprocess
 
 
 class TestUtils(unittest.TestCase):
