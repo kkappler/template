@@ -2,9 +2,17 @@
     This module contains various tools that we may need to import.
 """
 
+import inspect
 import matplotlib
+import pathlib
 import subprocess
 
+
+import template
+
+init_file = inspect.getfile(template)
+REPO_PATH = pathlib.Path(init_file).parent.parent.parent # Top Level of repo
+print(f"REPO_PATH: {REPO_PATH}")
 
 def set_matplotlib_backend(backend: str = "TkAgg"):
     """

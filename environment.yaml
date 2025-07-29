@@ -1,17 +1,28 @@
+# Generated conda environment file
 name: template
 channels:
-  - anaconda
-  - conda-forge
-  - defaults
+- anaconda
+- conda-forge
+- defaults
 dependencies:
-#  - scipy==1.9.1
-  - pip==24.2
-  - python==3.9
-  - pip:
-#    - aurora
-#    - ipykernel
-    - jupyterlab
-    - numpy<2.0
-    - pandas==2.2.2
-    - scipy
-#    - torchvision 
+- pip:
+  - ipympl
+  - ipywidgets
+  - loguru
+  - matplotlib
+  - scipy
+  - pyserial
+  - pandas
+  - xarray
+  - black
+  - flake8
+  - ipython
+  - nbsphinx
+  - numpydoc
+  - pre-commit
+  - pytest
+  - pytest-cov
+  - toml
+  - sphinx_gallery
+  - sphinx_rtd_theme
+# note the restart of the alphabetization in pip depenndecies is where dev starts
