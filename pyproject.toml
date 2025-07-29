@@ -10,8 +10,6 @@ dependencies = [
     "ipywidgets",
     "loguru",
     "matplotlib",
-    "mtpy-v2",
-    "numpy<2",
     "scipy",
     "pyserial",  # installs as serial
     "pandas",
@@ -32,6 +30,21 @@ readme = "README.md"
 classifiers = [
   "Development Status :: 2 - Pre-Alpha",
   "Programming Language :: Python",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "flake8",
+    "ipython",
+    "nbsphinx",
+    "numpydoc",
+    "pre-commit",
+    "pytest",
+    "pytest-cov",
+    "toml",
+    "sphinx_gallery",
+    "sphinx_rtd_theme",
 ]
 
 
