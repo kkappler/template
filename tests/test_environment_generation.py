@@ -9,6 +9,7 @@ def test_conda_env_matches_saved():
     Test that conda_environment.yaml and environment.yaml are identical after generation.
     """
     # Adjust paths if needed
+
     conda_env = TESTS_DIR.joinpath("conda_environment.yaml")
     saved_env = TESTS_DIR.joinpath("environment.yaml")
     assert conda_env.exists(), f"Missing: {conda_env}"
