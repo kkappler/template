@@ -10,8 +10,6 @@ dependencies = [
     "ipywidgets",
     "loguru",
     "matplotlib",
-    "mtpy-v2",
-    "numpy<2",
     "scipy",
     "pyserial",  # installs as serial
     "pandas",
