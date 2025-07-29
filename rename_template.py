@@ -46,7 +46,7 @@ def rename_template_to_new(project_name: str) -> None:
     replace_in_file(pyproject_file, 'https://github.com/kkappler/template/issues', f'https://github.com/kkappler/{project_name}/issues')
 
     # 4. test_helper_functions.py
-    test_file: str = os.path.join("test", "util", "test_helper_functions.py")
+    test_file: str = os.path.join("tests", "util", "test_helper_functions.py")
     replace_in_file(test_file, "template.util.helper_functions", f"{project_name}.util.helper_functions")
 
     # 5. README.md
