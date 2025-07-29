@@ -41,6 +41,7 @@ dev = [
     "numpydoc",
     "pre-commit",
     "pytest",
+    "pytest-cov",
     "toml",
     "sphinx_gallery",
     "sphinx_rtd_theme",
