@@ -49,17 +49,17 @@ jobs:
 
     - name: Install Package in Editable Mode
       run: |
-        conda activate hp3562a
+        conda activate template
         pip install -e .
 
     - name: Run Tests
       run: |
-        conda activate hp3562a
-        pytest -s -v --cov=./ --cov-report=xml --cov=st
+        conda activate template
+        pytest -s -v --cov=./ --cov-report=xml --cov=template
 
     # - name: "Upload coverage to Codecov"
     #   run: |
-    #     conda activate hp3562a
+    #     conda activate template
     #     codecov
 
 #    - name: Build Doc

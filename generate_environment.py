@@ -17,7 +17,7 @@ def generate_environment(python_version: Optional[Union[str, float]]):
     dev_dependencies = pyproject["project"].get("optional-dependencies", {}).get("dev", [])
 
     conda_env = {
-        "name": "templates",
+        "name": "template",
         "channels": ["anaconda", "conda-forge", "defaults"],
         "dependencies": [
             f"python={python_version}" if python_version else None,
