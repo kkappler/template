@@ -34,6 +34,19 @@ classifiers = [
   "Programming Language :: Python",
 ]
 
+[project.optional-dependencies]
+dev = [
+    "black",
+    "flake8",
+    "ipython",
+    "nbsphinx",
+    "numpydoc",
+    "pre-commit",
+    "pytest",
+    "sphinx_gallery",
+    "sphinx_rtd_theme",
+]
+
 
 [project.urls]
 Repository = "https://github.com/kkappler/template.git"

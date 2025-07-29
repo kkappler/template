@@ -1,6 +1,8 @@
 # template
 
-This is an example of a src/ structure that I have lately been favoring for repo structure.
+This is an example of a src/ structure repo.
+
+Previously it used requirements-dev.txt but that has been deprecated and instead we can install the dev requirements from the pyproject.toml file.
 
 To install the environment:
 > conda env create --file environment.yaml
@@ -16,8 +18,8 @@ Because the environment will be in flux for sometime, we may need to periodicall
 > conda env update --name template --file environment.yaml --prune
 
 # Add developer stuffs
-> pip install -r requirements-dev.txt
-
+# > pip install -r requirements-dev.txt # deprecated
+> pip install -e ".dev"  # install from toml 
 # Install the package 
 > pip install -e .
 
